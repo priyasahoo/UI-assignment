@@ -1,0 +1,83 @@
+var accData = [
+	{"acctNum":"AAA - 1234" ,
+	"user":"Alice"
+	},
+	{"acctNum":"AAA - 5321" ,
+	"user":"Bob"
+	},
+	{"acctNum":"AAA - 9921" ,
+	"user":"Alice"
+	},
+	{"acctNum":"AAA - 8191" ,
+	"user":"Alice"
+	}
+]
+
+var balance= {
+	"AAA - 1234" : 4593.22,
+	"AAA - 9921" : 0,
+	"AAA - 5321" : 232142.5,
+	"AAA - 8191" : 4344
+}
+
+/*1. Given values for acctData and balances below, write a function that returns only an array of account
+numbers, and accepts the following optional parameters: */
+var sortable = [];
+function getValueByKey(accData,balance) {
+  let accArray = [];
+  for (var bal in balance) {
+	sortable.push([bal, balance[bal]]);
+	}
+  getSortedValue(sortable); // to get sort data
+	sortable.forEach( element => {	
+    accArray.push(element[0]);
+  });
+  return accArray;
+}
+function getSortedValue(data) {
+	data.sort(function(a, b) {
+	return a[1] - b[1];
+	});
+}
+getValueByKey(accData,balance);
+
+/* 2. Execute your function and output the results as an array in console log for the following scenarios: */
+
+//a) filtered by Bob
+var foundBob = accData.filter(function(item) { return item.user === 'Bob'; });
+console.log(foundBob[0]);
+
+// b) filtered by Charlie
+var foundCharlie = accData.filter(function(item) { return item.user === 'Charlie'; });
+console.log(foundCharlie[0]);
+
+//c) sorted by acctNum
+var sortActNum = accData.sort(function(a, b) {
+	return a[1] - b[1];
+	});
+console.log(sortActNum);
+
+//d) filtered by Alice; sorted by balance ascending
+
+function getSortedValueUsr(accData,balance,name) {
+  let accDataObj = {};
+    for (const index in accData ) {
+      if(!accDataObj.hasOwnProperty(accData[index].user)){
+      let newObj = {};
+      newObj[accData[index].acctNum] = balance[accData[index].acctNum];
+      accDataObj[accData[index].user] = newObj
+      } else {
+      accDataObj[accData[index].user][accData[index].acctNum] = balance[accData[index].acctNum]
+      }
+    }
+  console.log(sortBasedOnValue(accDataObj[name]))
+  return sortBasedOnValue(accDataObj[name]);
+}
+
+function sortBasedOnValue(list) {
+    return Object.keys(list).sort(function(a, b) {
+        return list[a] - list[b]
+    })
+} 
+//d) filtered by Alice; sorted by balance ascending
+getSortedValueUsr(accData,balance,'Alice')
