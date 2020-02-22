@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+	<style>
+body{
+    margin: 0;
+	padding: 0;
+    border: 0;
+    line-height: 1;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+h3,h4,h6{
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+
+/* Table wrapper CSS */
+.table-wrapper {
+    width: 300px;
+    height: 50%;
+    overflow: hidden;
+    border: 3px solid #13b0f1; 
+}
+/* Table css */
+
+table {
+    border-collapse: collapse;
+    width: 100%;  
+    overflow-y: scroll;
+}
+thead {
+    background-color: #f2f2f2;
+}
+thead tr th{
+    font-size: 14px;
+    vertical-align: bottom;
+}
+th, td {
+    text-align: left;
+    padding: 10px;
+}
+thead tr, tbody tr{
+    border-bottom: 1px solid #c3bdbd;
+}
+th:last-child {
+    text-align: right;
+}
+th:last-child > h4{
+    margin-bottom: 5px;
+}
+.avilable-cash-wrap {
+    background-color: #c7d8daa1;
+}
+
+/* Text CSS */
+.text-success {
+    color: green;
+}
+.text-danger {
+    color: red;
+}
+.text-skyblue {
+    color: #13b0f1;
+}
+a.text-skyblue {
+    transition: color 0.5s ease-in-out;
+}
+a.text-skyblue:hover{
+    color: #064e6b;
+}
+.inline-text > * {
+    display: inline-block;
+}
+.today-change-text{
+    font-weight: 400;
+    color: #a29797;
+    font-size: 12px;
+}
+.update-text {
+    font-size: 10px;
+}
+/* Load button CSS */
+.load-text-container {
+    text-align: center;
+    padding: 16px 0;
+    vertical-align: middle;
+}
+.load-text{
+    font-size: 16px;
+    font-weight: 600;
+}
+.small-text {
+    font-size: 12px;
+}
+</style>
+</head>
+<body>
+    <section>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th class="small-text">
+                            Account
+                        </th>
+                        <th class="avilable-cash-wrap">
+                            <div class="inline-text">
+                                <span class="text-skyblue">^</span><span><h4>Avilable Cash</h4></span>
+                            </div>
+                            <div class="today-change-text">
+                                <span>Today's Change</span>
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>
+                            <a href="javasript:void(0)" class="text-skyblue">
+                                <h3><span class="tag-name">IRA</span> -
+                                    <span class="tag-number"> 2100</span>    
+                                </h3>
+                            </a>                            
+                        </th>
+                        <th>
+                            <h4>$5,763.36</h4>
+                            <h6 class="update-text text-danger">-0.08% / $8,916.69</h6>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="javasript:void(0)" class="text-skyblue">
+                            <h3><span class="tag-name">AAA</span> -
+                                <span class="tag-number"> 1812</span>    
+                            </h3>
+                            </a>
+                        </th>
+                        <th>
+                            <h4>$2,010,926.10</h4>
+                            <h6 class="update-text text-success">+0.21% / $38,881.63</h6>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <a href="javascript:void(0)" class="text-skyblue">
+                                <h3><span class="tag-name">AAA</span> -
+                                    <span class="tag-number"> 3810</span>    
+                                </h3>
+                            </a>
+                        </th>
+                        <th>
+                            <h4>$10,050,054.07</h4>
+                            <h6 class="update-text text-success">+0.07% / $8,916.69</h6>
+                        </th>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="load-text-container">
+                <a href="javascript:void(0);" class="load-text text-skyblue">Load more</a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
